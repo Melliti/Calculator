@@ -35,4 +35,12 @@ public class Controller {
             result.setText(String.valueOf(Integer.parseInt(result.getText()) - Integer.parseInt(t1.getText())));
         t1.clear();
     }
+
+    public void mult() {
+        if (result.getText() == "")
+            result.setText(t1.getText());
+        else
+            result.setText(String.valueOf(Integer.parseInt(result.getText()) * Integer.parseInt(t1.getText())));
+        t1.clear();
+    }
 }
