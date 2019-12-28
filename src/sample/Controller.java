@@ -21,7 +21,6 @@ public class Controller {
     }
 
     public void add() {
-        System.out.println(result);
         if (result.getText() == "")
             result.setText(t1.getText());
         else
@@ -30,6 +29,10 @@ public class Controller {
     }
 
     public void minus() {
-
+        if (result.getText() == "")
+            result.setText(t1.getText());
+        else
+            result.setText(String.valueOf(Integer.parseInt(result.getText()) - Integer.parseInt(t1.getText())));
+        t1.clear();
     }
 }
