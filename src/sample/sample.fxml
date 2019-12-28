@@ -18,7 +18,7 @@
    <children>
       <AnchorPane prefHeight="220.0" prefWidth="250.0">
          <children>
-            <TextField fx:id="t1" layoutX="52.0" layoutY="11.0" />
+            <TextField fx:id="t1" layoutX="52.0" layoutY="11.0" onKeyReleased="#formatter" />
             <Button fx:id="addition" layoutX="52.0" layoutY="50.0" mnemonicParsing="false" onAction="#add" prefHeight="30.0" prefWidth="30.0" text="+" />
             <Button fx:id="minus" layoutX="92.0" layoutY="50.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="-" />
             <Button fx:id="division" layoutX="171.0" layoutY="50.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="/" />
