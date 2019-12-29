@@ -12,15 +12,32 @@ public class Controller {
     public Text result;
     public Text value = new Text("");
     public Button button;
+    public String sign = "";
 
+    // This function bloc non numeric input
     @FXML public void formatter() {
-        if (!Character.isDigit(t1.getText().charAt(t1.getText().length() - 1)))
-            t1.setText(value.getText());
-        else
-            value.setText(t1.getText());
+        if (t1.getText().length() >= 1)
+        {
+            if (!Character.isDigit(t1.getText().charAt(t1.getText().length() - 1)))
+                t1.setText(value.getText());
+            else
+                value.setText(t1.getText());
+        }
+    }
+
+    public void clearField() {
+        result.setText("");
+        value.setText("");
+        t1.clear();
+    }
+
+    public void submit() {
+        System.out.println(this.sign);
+        System.out.println("ok");
     }
 
     public void add() {
+        this.sign = "+";
         if (result.getText() == "")
             result.setText(t1.getText());
         else
@@ -29,6 +46,7 @@ public class Controller {
     }
 
     public void minus() {
+        this.sign = "-";
         if (result.getText() == "")
             result.setText(t1.getText());
         else
@@ -37,6 +55,7 @@ public class Controller {
     }
 
     public void mult() {
+        this.sign = "*";
         if (result.getText() == "")
             result.setText(t1.getText());
         else
@@ -45,6 +64,7 @@ public class Controller {
     }
 
     public void divide() {
+        this.sign = "/";
         if (result.getText() == "")
             result.setText(t1.getText());
         else

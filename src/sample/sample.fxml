@@ -18,13 +18,15 @@
    <children>
       <AnchorPane prefHeight="220.0" prefWidth="250.0">
          <children>
-            <TextField fx:id="t1" layoutX="52.0" layoutY="11.0" onKeyReleased="#formatter" />
+            <TextField fx:id="t1" layoutX="52.0" layoutY="11.0" onAction="#submit" onKeyTyped="#formatter" />
             <Button fx:id="addition" layoutX="52.0" layoutY="69.0" mnemonicParsing="false" onAction="#add" prefHeight="30.0" prefWidth="30.0" text="+" />
             <Button fx:id="minus" layoutX="92.0" layoutY="69.0" mnemonicParsing="false" onAction="#minus" prefHeight="30.0" prefWidth="30.0" text="-" />
             <Button fx:id="division" layoutX="171.0" layoutY="69.0" mnemonicParsing="false" onAction="#divide" prefHeight="30.0" prefWidth="30.0" text="/" />
             <Button fx:id="mult" layoutX="132.0" layoutY="69.0" mnemonicParsing="false" onAction="#mult" prefHeight="30.0" prefWidth="30.0" text="*" />
-            <Text layoutX="52.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result:" />
-            <Text fx:id="result" layoutX="96.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Button layoutX="52.0" layoutY="110.0" mnemonicParsing="false" onAction="#clearField" prefHeight="25.0" prefWidth="30.0" text="C" />
+            <Text layoutX="44.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result:" />
+            <Text fx:id="result" layoutX="88.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Button layoutX="92.0" layoutY="110.0" mnemonicParsing="false" onAction="#submit" prefHeight="25.0" prefWidth="110.0" text="=" />
          </children>
       </AnchorPane>
    </children>
