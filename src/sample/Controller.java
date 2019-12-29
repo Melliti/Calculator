@@ -32,8 +32,16 @@ public class Controller {
     }
 
     public void submit() {
-        System.out.println(this.sign);
-        System.out.println("ok");
+        if (t1.getText().length() >= 1) {
+            if (this.sign.equals("+"))
+                add();
+            if (this.sign.equals("-"))
+                minus();
+            if (this.sign.equals("*"))
+                mult();
+            if (this.sign.equals("/"))
+                divide();
+        }
     }
 
     public void add() {
