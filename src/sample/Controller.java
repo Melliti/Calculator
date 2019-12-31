@@ -18,11 +18,9 @@ public class Controller {
     @FXML public void formatter() {
         boolean isNumber = true;
         try {
-            System.out.println(t1.getText());
             if (t1.getText().length() > 0)
                 Float.parseFloat(t1.getText());
         } catch (NumberFormatException e) {
-            System.out.println("NOPE !");
             isNumber = false;
             sign = t1.getText().replaceAll("^[\\s\\.\\d]+", "");
         }
@@ -70,6 +68,7 @@ public class Controller {
             if (this.sign.equals("/"))
                 divide();
         }
+//        result.setText("");
     }
 
     public void add() {
@@ -77,7 +76,8 @@ public class Controller {
         if (result.getText() == "")
             result.setText(t1.getText());
         else
-            result.setText(String.valueOf(Float.parseFloat(result.getText()) + Float.parseFloat(t1.getText())));
+            if (!t1.getText().equals(""))
+                result.setText(String.valueOf(Float.parseFloat(result.getText()) + Float.parseFloat(t1.getText())));
         t1.clear();
     }
 
@@ -86,7 +86,8 @@ public class Controller {
         if (result.getText() == "")
             result.setText(t1.getText());
         else
-            result.setText(String.valueOf(Float.parseFloat(result.getText()) - Float.parseFloat(t1.getText())));
+            if (!t1.getText().equals(""))
+                result.setText(String.valueOf(Float.parseFloat(result.getText()) - Float.parseFloat(t1.getText())));
         t1.clear();
     }
 
@@ -95,7 +96,8 @@ public class Controller {
         if (result.getText() == "")
             result.setText(t1.getText());
         else
-            result.setText(String.valueOf(Float.parseFloat(result.getText()) * Float.parseFloat(t1.getText())));
+            if (!t1.getText().equals(""))
+                result.setText(String.valueOf(Float.parseFloat(result.getText()) * Float.parseFloat(t1.getText())));
         t1.clear();
     }
 
@@ -104,7 +106,8 @@ public class Controller {
         if (result.getText() == "")
             result.setText(t1.getText());
         else
-            result.setText(String.valueOf(Float.parseFloat(result.getText()) / Float.parseFloat(t1.getText())));
+            if (!t1.getText().equals(""))
+                result.setText(String.valueOf(Float.parseFloat(result.getText()) / Float.parseFloat(t1.getText())));
         t1.clear();
     }
 }
