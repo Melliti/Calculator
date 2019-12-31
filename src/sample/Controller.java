@@ -5,7 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
+
+import java.awt.event.KeyListener;
 
 public class Controller {
     public TextField t1;
@@ -19,9 +22,13 @@ public class Controller {
     @FXML public void formatter() {
         boolean isNumber = true;
         try {
-            Float.parseFloat(t1.getText());
+            System.out.println(t1.getText());
+            if (t1.getText().length() > 0)
+                Float.parseFloat(t1.getText());
         } catch (NumberFormatException e) {
+            System.out.println("NOPE !");
             isNumber = false;
+            sign = t1.getText().replaceAll("^[\\s\\.\\d]+", "");
         }
 
         if (!isNumber) {
@@ -30,7 +37,6 @@ public class Controller {
         }
         else
             value.setText(t1.getText());
-
     }
 
     public void clearField() {
