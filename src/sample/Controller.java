@@ -1,14 +1,10 @@
 package sample;
 
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
-
-import java.awt.event.KeyListener;
 
 public class Controller {
     public TextField t1;
@@ -32,8 +28,26 @@ public class Controller {
         }
 
         if (!isNumber) {
-            t1.setText(value.getText());
-            t1.positionCaret(value.getText().length());
+            t1.setText(t1.getText().replaceAll("[^\\d.]", ""));
+            switch (sign) {
+                case "+":
+                    add();
+                    break;
+                case "-":
+                    minus();
+                    break;
+                case "/":
+                    divide();
+                    break;
+                case "*":
+                    mult();
+                    break;
+                default:
+                    t1.setText(value.getText());
+                    t1.positionCaret(value.getText().length());
+                    break;
+
+            }
         }
         else
             value.setText(t1.getText());
