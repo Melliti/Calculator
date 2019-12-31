@@ -1,9 +1,12 @@
 package sample;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 
 public class Controller {
@@ -16,9 +19,14 @@ public class Controller {
 
     // This function bloc non numeric input
     @FXML public void formatter() {
+        System.out.println(t1.getText().length());
         if (t1.getText().length() >= 1)
         {
-            if (!Character.isDigit(t1.getText().charAt(t1.getText().length() - 1)))
+//            System.out.println();
+            System.out.println(t1.getText().length());
+            System.out.println(Character.isDigit(t1.getText().charAt(t1.getText().length() - 1)));
+            if (!Character.isDigit(t1.getText().charAt(t1.getText().length() - 1)) ||
+                    !Character.isDigit(t1.getText().charAt(0)))
                 t1.setText(value.getText());
             else
                 value.setText(t1.getText());
